@@ -8,8 +8,6 @@
         "Groot"
     ];
 
-
-
 //********** FUNCTIONS
     //Buttons get rebuilt each time so we need a function
     function createButtons () {
@@ -34,7 +32,7 @@
         topics.push(newSuperhero);
     };
 
-//*********** MAIN CODE
+//*********** ADD NEW BUTTON and CREATE BUTTONS
     // We need a onClick trigger for the +Add form button
     $("#add-superhero").on("click", function(event) {
         
@@ -49,31 +47,37 @@
     //Call the createButtons function automatically (ie when page loads)
     createButtons();
 
-//**************** 
+
+//**************** GIPHY API
 //Code for connecting to and parsing data from the Giphy API
 //see https://developers.giphy.com/explorer/
 
 //sample SEARCH request
 // https://api.giphy.com/v1/gifs/search?api_key=pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH&q=superman&limit=10&offset=0&rating=G&lang=en
+    //we want a way to save the returned giphy results for later parsing
+    var giphyResults = {};
 
-$("#get-superhero").on("click", function(event) {
+    $(".get-superhero").on("click", function(event) {
+            
+        // event.preventDefault();
         
-    event.preventDefault(); // this prevents the html form from relaoding the page on submit
-    
-    var method = "search";
-    var apiKey = "pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH";
-    var search = this.text();
+        var method = "search";
+        var apiKey = "pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH";
+        var search = $(this).text();
 
-    var queryURL = "https://api.giphy.com/v1/gifs/" +method +"?api_key=" +apiKey +"&q=" +search +"&limit=10&offset=0&lang=en";
-    console.log(queryURL);
+        var queryURL = "https://api.giphy.com/v1/gifs/" +method +"?api_key=" +apiKey +"&q=" +search +"&limit=10&offset=0&lang=en";
+        // console.log(queryURL);
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      console.log(response);
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+        }).then(function(response) {
+            // console.log(response);
+            //save results as global variable for parsing
+            giphyResults = response.data;
+        });
+
+        //no parse giphyResults and insert into the page
+
     });
-
-
-});
 
