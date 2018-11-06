@@ -20,7 +20,7 @@
         for (i =0; i < topics.length; i++) {
             //now create a new button element, assign it a css class, and label it with the array value
             var newButton = $("<button>");
-            newButton = newButton.addClass("add-superhero").text(topics[i]);
+            newButton = newButton.addClass("get-superhero").text(topics[i]);
             $("#button-view").append(newButton);
         }
     };
@@ -49,19 +49,23 @@
     //Call the createButtons function automatically (ie when page loads)
     createButtons();
 
+//**************** 
 //Code for connecting to and parsing data from the Giphy API
 //see https://developers.giphy.com/explorer/
 
 //sample SEARCH request
 // https://api.giphy.com/v1/gifs/search?api_key=pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH&q=superman&limit=10&offset=0&rating=G&lang=en
 
+$("#get-superhero").on("click", function(event) {
+        
+    event.preventDefault(); // this prevents the html form from relaoding the page on submit
+    
+    var method = "search";
+    var apiKey = "pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH";
+    var search = this.text();
 
-var baseUrl = "https://api.giphy.com/v1/gifs/";
-var method = "search";
-var apiKey = "pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH";
-var search;
-
-var queryURL = queryURL +method +"?api_key=" +apiKey +"&q=" +search +"&limit=10&offset=0&lang=en"
+    var queryURL = "https://api.giphy.com/v1/gifs/" +method +"?api_key=" +apiKey +"&q=" +search +"&limit=10&offset=0&lang=en";
+    console.log(queryURL);
 
     $.ajax({
       url: queryURL,
@@ -69,3 +73,7 @@ var queryURL = queryURL +method +"?api_key=" +apiKey +"&q=" +search +"&limit=10&
     }).then(function(response) {
       console.log(response);
     });
+
+
+});
+
