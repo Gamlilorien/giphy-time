@@ -4,13 +4,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <title>Giphy Time App</title>
 </head>
 <body>
-    
 
-    <script src="assets/javascript/giphy.js"></script>
+    <div class="container">
+        <h1>Superhero Giphy Time!</h1>
+    
+    <!-- Buttons goes here -->
+        <div id="button-view">
+            <!-- Buttons will be inserted automatically by js  -->
+        </div>
+
+        <!-- Input form goes here -->
+        <form id="superhero-form">
+            <label for="superhero-input">Add a Superhero!</label>
+            <input type="text" id="superhero-input">
+            <input id="add-superhero" type="submit" value="+ Add">
+        </form>
+
+    <!-- Giphy results goes here -->
+        <div id="giphy-view">
+
+        </div>
+    
+    <!--END main container div -->
+    </div>
+    <script type="text/javascript" src="assets/javascript/giphy.js"></script>
 </body>
 </html>
