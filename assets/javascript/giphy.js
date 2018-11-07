@@ -43,26 +43,42 @@
 
 //sample SEARCH request
 // https://api.giphy.com/v1/gifs/search?api_key=pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH&q=superman&limit=10&offset=0&rating=G&lang=en
-    function parseGiphyResults() {
+    function parseGiphyResults() {        
+        
+        //first, create a responsive flexbox row
+        var newRow = $("<div>").addClass("row");
+
         //we want to loop through the results and grab the fixed width image, and image rating
         for (i = 0; 1 < giphyResults.length; i++) {
+
             //create new <img> element
             var still = giphyResults[i].images.fixed_height_still.url;
             var giff = giphyResults[i].images.fixed_height.url;
             //also add a "giff" class to it, the initial src url, and data-animate, data-still, and data-state attributes too.
             var newImg = $("<img>").addClass("giff").attr({"src": still, "data-animate": giff, "data-still": still, "data-state": "still"});
-            console.log(newImg);
 
-            //now add this image to the HTML
-            $("#giphy-view").append(newImg);
+            var title = "<p>" +giphyResults[i].title +"</p>";
+            var rating = "<p>" +giphyResults[i].rating +"</p>";
+
+            //combine it all togehter in a column div
+            var newCol = $("<div>").addClass("col-sm").append(newImg);
+            newCol = newCol.append(title);
+            newCol = newCol.append(rating);
+
+            //add to the HTML variable
+            
+            newRow = newRow.append(newCol);
+
+            $("#giphy-view").append(newRow);
+
         }
+    
     };
 
     function displayGiffs() {
 
         //fist, clear previous images if any
-        $("#giphy-view").empty();
-        
+        //disabled this step to allow a running list of results        
         //define temp variables
         var method = "search";
         var apiKey = "pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH";
@@ -87,22 +103,26 @@
     };
 
     function toggleGiffs() {
-        console.log(this);
+        // console.log(this);
         //we will toggle each giff to either STILL or ANIMATE
         var state = $(this).attr("data-state");
   
         if (state == "still") {
-          console.log("still");
+        //   console.log("still");
           $(this).attr("src", $(this).attr("data-animate"));
           $(this).attr("data-state", "animate")
         }
   
         if (state == "animate") {
-          console.log("animate");
+        //   console.log("animate");
           $(this).attr("src", $(this).attr("data-still"));
           $(this).attr("data-state", "still");
         }
   
+    };
+
+    function clearGiffs() {
+        $("#giphy-view").empty();
     };
 
 //*********** ADD NEW BUTTON and CREATE BUTTONS
@@ -129,3 +149,5 @@
     $(document).on("click", ".giff", toggleGiffs);
     // Again trying to use this DIDN'T work $(".gif").on("click", function() {
    
+    //option for users to clear giff results on their own.
+    $(document).on("click", "#clearGiffs", clearGiffs);
