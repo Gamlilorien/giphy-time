@@ -23,7 +23,7 @@
         for (i =0; i < topics.length; i++) {
             //now create a new button element, assign it a css class, and label it with the array value
             var newButton = $("<button>");
-            newButton = newButton.addClass("get-superhero").text(topics[i]);
+            newButton = newButton.addClass("get-superhero btn btn-primary").text(topics[i]);
             $("#button-view").append(newButton);
         }
     };
@@ -57,8 +57,8 @@
             //also add a "giff" class to it, the initial src url, and data-animate, data-still, and data-state attributes too.
             var newImg = $("<img>").addClass("giff").attr({"src": still, "data-animate": giff, "data-still": still, "data-state": "still"});
 
-            var title = "<p>" +giphyResults[i].title +"</p>";
-            var rating = "<p>" +giphyResults[i].rating +"</p>";
+            var title = "<p>Title: " +giphyResults[i].title +"</p>";
+            var rating = "<p>Rating: " +giphyResults[i].rating +"</p>";
 
             //combine it all togehter in a column div
             var newCol = $("<div>").addClass("col-sm").append(newImg);

@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
@@ -13,22 +15,29 @@
 <body>
 
     <div class="container">
-        <h1>Superhero Giphy Time!</h1>
+
+        <div class="jumbotron">
+            <h1 class="display-4 main-title">Superhero Giphy Time!</h1>
+            <hr class="my-4">
+            <!-- Buttons goes here -->
+                <div id="button-view">
+                    <!-- Buttons will be inserted automatically by js  -->
+                </div>
     
-    <!-- Buttons goes here -->
-        <div id="button-view">
-            <!-- Buttons will be inserted automatically by js  -->
+            <!-- Input form goes here -->
+            <form id="superhero-form">
+                <label for="superhero-input">Add a Superhero!</label>
+                <input type="text" id="superhero-input">
+                <input id="add-superhero" type="submit" value="+ Add">
+            </form>
+            <hr class="my-4">
+            <button class="btn btn-primary" id="clearGiffs">Clear Results</button>
+            <a href="#"><i class="fas fa-envelope fa-3x"></i></a>
+
         </div>
 
-        <!-- Input form goes here -->
-        <form id="superhero-form">
-            <label for="superhero-input">Add a Superhero!</label>
-            <input type="text" id="superhero-input">
-            <input id="add-superhero" type="submit" value="+ Add">
-        </form>
 
     <!-- Giphy results goes here -->
-        <button id="clearGiffs">Clear Results</button>
         <div id="giphy-view">
 
         </div>

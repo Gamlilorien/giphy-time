@@ -1,8 +1,35 @@
+body {
+    background-color: black;
+}
+
+h1, h2, h3, h4, p, label, i {
+    color: white;
+}
+
 button, form, div, input, img {
     margin: 10px;
 }
 
 p {
-    margin: 0;
+    /* TRBL */
+    margin: 0 0 0 10px;
     line-height: 1rem;
+}
+
+#button-view {
+    margin-left: 0;
+}
+
+#main-title {
+    margin-left: 10px;
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: #2c4b5d;
+    padding: 2rem;
+}
+
+hr {
+    border-top: 1px solid black;
 }
