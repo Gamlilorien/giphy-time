@@ -135,6 +135,9 @@
     function clearGiffs() {
         $("#giphy-view").empty();
         $("#resultCount").empty();
+        //need to clear variable too
+        countResults = 0;
+
     };
 
 
