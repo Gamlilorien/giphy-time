@@ -125,6 +125,18 @@
         $("#giphy-view").empty();
     };
 
+
+    //********* To save image, see http://forums.devshed.com/javascript-development-115/save-image-webpage-using-javascript-157493.html
+    // var a = document.createElement('a');
+    // //alert(a.download === ''); // If true, this seems to indicate support
+    // a.setAttribute('download', 'test.gif');
+    // a.href = 'https://media.giphy.com/media/LDBuYzAwu8L4I/giphy.gif';
+    // a.innerHTML = 'testing';
+    // a.style.display = 'none';
+    // document.body.appendChild(a);
+    // a.click();
+
+    
 //*********** ADD NEW BUTTON and CREATE BUTTONS
     // We need a onClick trigger for the +Add form button
     $("#add-superhero").on("click", function(event) {
