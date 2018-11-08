@@ -13,6 +13,8 @@
     //we want a way to save the returned giphy results for later parsing
     var giphyResults = {};
 
+    var countResults = 0;
+
 //********** FUNCTIONS
     //Buttons get rebuilt each time so we need a function
     function createButtons () {
@@ -76,6 +78,10 @@
 
             $("#giphy-view").append(newRow);
 
+            //update countResults by 10.... for some reason +10 made it 100 not 10. Was it treating like a string?
+            countResults = countResults + 1;
+            $("#resultCount").text(countResults);
+
         }
     
     };
@@ -128,6 +134,7 @@
 
     function clearGiffs() {
         $("#giphy-view").empty();
+        $("#resultCount").empty();
     };
 
 
