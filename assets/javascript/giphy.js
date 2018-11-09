@@ -140,7 +140,21 @@
 
     };
 
-
+    //atempting to force download image using javascript
+    //see: http://forums.devshed.com/javascript-development-115/save-image-webpage-using-javascript-157493.html
+    //would need this in HTML to work
+    //<a HREF="javascript: void 0">   
+    //<IMG  ONCLICK="saveImageAs(document.anImage); return false" NAME="anImage" SRC="http://www.mosharakah.com/images/icons/messenger/7052005214036.gif"></a>
+  
+    function saveImageAs (imgOrURL) {
+        if (typeof imgOrURL == 'object')
+          imgOrURL = imgOrURL.src;
+        window.win = open (imgOrURL);
+        setTimeout('win.resizeTo(0, 0);',100);
+        setTimeout('win.moveTo(0, 0);',200);
+        setTimeout('win.document.execCommand("SaveAs")', 500);
+        setTimeout('win.close()',1000);
+      }
     
 //*********** ADD NEW BUTTON and CREATE BUTTONS
     // We need a onClick trigger for the +Add form button
