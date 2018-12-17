@@ -2,7 +2,7 @@
 
 ### Introduction
 
-In this app, I make use of the GIPHY API to create a dynamic web page that populates with gifs of various superheros. To finish this task, you must call the GIPHY API and use JavaScript and jQuery to change the HTML of your site.
+In this app, I make use of the GIPHY API to create a dynamic web page that populates with gifs of various superheros. This is accomplished by making calls the GIPHY API and using JavaScript and jQuery to change the HTML of the site.
 
 ![giphy-time](assets/images/giphy-time.png)
 
