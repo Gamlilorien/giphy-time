@@ -1,4 +1,4 @@
-# giphy-time
+# Giphy Time
 
 ### Introduction
 
