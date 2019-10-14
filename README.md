@@ -6,6 +6,8 @@ In this app, I make use of the GIPHY API to create a dynamic web page that popul
 
 ![giphy-time](assets/images/giphy-time.png)
 
+[See Live Demo](https://gamlilorien.github.io/giphy-time/)
+
 ### Overview
 
 1. **Mobile Responsive**.
