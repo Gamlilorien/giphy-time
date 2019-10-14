@@ -37,6 +37,8 @@
         $("#superhero-input").val("");
         //PUSH this new value to the 'topics' array
         topics.push(newSuperhero);
+        //Decided to also search for the new term immediately after creating a button
+        searchGiffs(newSuperhero);
     };
 
 //**************** GIPHY API
@@ -90,7 +92,6 @@
 
         //fist, clear previous images if any
         //disabled this step to allow a running list of results
-        https://api.giphy.com/v1/gifs/search?api_key=pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH&q=superman&limit=10&offset=0&rating=G&lang=en        
         //define temp variables
         var method = "search";
         var apiKey = "pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH";
@@ -114,6 +115,23 @@
         });
 
     };
+
+    function searchGiffs(search) {
+        var method = "search";
+        var apiKey = "pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH";
+        var offset = Math.floor(Math.random() * 100);;
+        var queryURL = "https://api.giphy.com/v1/gifs/" +method +"?api_key=" +apiKey +"&q=" +search +"&limit=10&offset=" +offset +"&lang=en";
+
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+        }).then(function(response) {
+            //save results as global variable for parsing
+            giphyResults = response.data;
+            //now parse giphyResults and insert into the page
+            parseGiphyResults();
+        });
+    }
 
     function toggleGiffs() {
         // console.log(this);
