@@ -76,7 +76,7 @@
             
             newRow = newRow.append(newCol);
 
-            $("#giphy-view").append(newRow);
+            $("#giphy-view").prepend(newRow);
 
             //update countResults by 10.... for some reason +10 made it 100 not 10. Was it treating like a string?
             countResults = countResults + 1;
@@ -89,13 +89,15 @@
     function displayGiffs() {
 
         //fist, clear previous images if any
-        //disabled this step to allow a running list of results        
+        //disabled this step to allow a running list of results
+        https://api.giphy.com/v1/gifs/search?api_key=pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH&q=superman&limit=10&offset=0&rating=G&lang=en        
         //define temp variables
         var method = "search";
         var apiKey = "pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH";
         var search = $(this).text();
+        var offset = Math.floor(Math.random() * 100);;
 
-        var queryURL = "https://api.giphy.com/v1/gifs/" +method +"?api_key=" +apiKey +"&q=" +search +"&limit=10&offset=0&lang=en";
+        var queryURL = "https://api.giphy.com/v1/gifs/" +method +"?api_key=" +apiKey +"&q=" +search +"&limit=10&offset=" +offset +"&lang=en";
         // console.log(queryURL);
 
         $.ajax({
