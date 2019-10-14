@@ -1,8 +1,8 @@
-# giphy-time
+# Giphy Time
 
 ### Introduction
 
-In this app, I make use of the GIPHY API to create a dynamic web page that populates with gifs of various superheros. To finish this task, you must call the GIPHY API and use JavaScript and jQuery to change the HTML of your site.
+In this app, I make use of the GIPHY API to create a dynamic web page that populates with gifs of various superheros. This is accomplished by making calls the GIPHY API and using JavaScript and jQuery to change the HTML of the site.
 
 ![giphy-time](assets/images/giphy-time.png)
 
@@ -26,22 +26,16 @@ In this app, I make use of the GIPHY API to create a dynamic web page that popul
   ![giphy-time](assets/images/batman-example.png)
 - - -
 
-### Minimum Requirements
-
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed. Adding a README.md as well as adding this homework to your portfolio are required as well and more information can be found below.
-
-- - -
-
 ### Bonus Goals
 
-1. Ensure your app is fully mobile responsive.
+1. Ensure your app is fully mobile responsive. (Done)
 
-2. Allow users to request additional gifs to be added to the page.
-   * Each request should ADD 10 gifs to the page, NOT overwrite the existing gifs.
+2. Allow users to request additional gifs to be added to the page. (Done)
+   * Each request should ADD 10 gifs to the page, NOT overwrite the existing gifs. (Done)
 
-3. List additional metadata (title, tags, etc) for each gif in a clean and readable format.
+3. List additional metadata (title, tags, etc) for each gif in a clean and readable format. (Done)
 
-4. Include a 1-click download button for each gif, this should work across device types.
+4. Include a 1-click download button for each gif, this should work across device types. (Done-ish, see above)
 
 5. Integrate this search with additional APIs such as OMDB, or Bands in Town. Be creative and build something you are proud to showcase in your portfolio
 
