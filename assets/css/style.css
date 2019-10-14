@@ -2,12 +2,28 @@ body {
     background-color: black;
 }
 
-h1, h2, h3, h4, p, label, i {
+h1, h2, h3, h4, p, label, i, input {
     color: white;
 }
 
 button, form, div, input, img {
     margin: 10px;
+}
+
+input {
+    padding: 5px 10px 5px 10px;
+    border-color: #dc3545;
+}
+.btn, input, .btn-danger {
+    background-color: #8e0101;
+    border-color: none;
+    border-radius: 16px;
+}
+
+.jumbotron {
+    background-image: url("../images/superman.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 p {

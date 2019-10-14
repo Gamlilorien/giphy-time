@@ -25,7 +25,7 @@
         for (i =0; i < topics.length; i++) {
             //now create a new button element, assign it a css class, and label it with the array value
             var newButton = $("<button>");
-            newButton = newButton.addClass("get-superhero btn btn-primary").text(topics[i]);
+            newButton = newButton.addClass("get-superhero btn btn-danger").text(topics[i]);
             $("#button-view").append(newButton);
         }
     };
@@ -64,6 +64,7 @@
             var title = "<p>Title: " +giphyResults[i].title +"</p>";
             var rating = "<p>Rating: " +giphyResults[i].rating +"</p>";
             var download = "<a href='" +giff +"' download='" +giphyResults[i].title +"'><i class='fas fa-save fa-2x'></i></a>"
+            // var sms = "<a href='sms:?body=" +giff +"' download='" +giphyResults[i].title +"'><i class='fas fa-comment fa-2x'></i></a>"
 
             // this is what we are trying to build
             // <a href="assets/images/drive-by_laugh.gif" download><i class="fas fa-save fa-2x"></i></a>
@@ -73,6 +74,7 @@
             newCol = newCol.append(title);
             newCol = newCol.append(rating);
             newCol = newCol.append(download);
+            //newCol = newCol.append(sms);
 
             //add to the HTML variable
             
@@ -96,7 +98,7 @@
         var method = "search";
         var apiKey = "pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH";
         var search = $(this).text();
-        var offset = Math.floor(Math.random() * 100);;
+        var offset = Math.floor(Math.random() * 20);;
 
         var queryURL = "https://api.giphy.com/v1/gifs/" +method +"?api_key=" +apiKey +"&q=" +search +"&limit=10&offset=" +offset +"&lang=en";
         // console.log(queryURL);
@@ -119,7 +121,7 @@
     function searchGiffs(search) {
         var method = "search";
         var apiKey = "pwoVnnT9lpebiS2XpkHvqJ1Ehl8Q1CnH";
-        var offset = Math.floor(Math.random() * 100);;
+        var offset = Math.floor(Math.random() * 20);;
         var queryURL = "https://api.giphy.com/v1/gifs/" +method +"?api_key=" +apiKey +"&q=" +search +"&limit=10&offset=" +offset +"&lang=en";
 
         $.ajax({
